@@ -1,5 +1,5 @@
 #!/bin/bash
-# Reestructura los repositorios de danone_v14 
+# Reestructura los repositorios de danone_v14
 # el principal problema es que los repos publicos de localizacion bajan como privados y travis no los puede bajar
 # como problema secundario los repositorios estan resprolijos
 # hay que bajar la rama que se quiere corregir en tmp/danone_v14
@@ -39,17 +39,16 @@ sudo rm -r website
 git commit -m"[REM] eliminar todos los submodulos"
 
 # agregar los submodulos incluyendolos en un directorio agrupados por autor y protocolo https
-git submodule add -b 14.0 https://github.com/quilsoft-org/account-financial-tools.git sub-loca
-git submodule add -b 14.0 https://github.com/quilsoft-org/account-payment.git sub-loca
-git submodule add -b 14.0 https://github.com/quilsoft-org/odoo-argentina.git sub-loca
-git submodule add -b 14.0 https://github.com/quilsoft-org/odoo-argentina-ee.git sub-loca
-git submodule add -b 14.0 https://github.com/OCA/reporting-engine.git sub-oca
-git submodule add -b 14.0 https://github.com/OCA/server-backend.git sub-oca
-git submodule add -b 14.0 https://github.com/OCA/website.git sub-oca
+git submodule add -b 14.0 https://github.com/quilsoft-org/account-financial-tools.git sub-loca/account-financial-tools
+git submodule add -b 14.0 https://github.com/quilsoft-org/account-payment.git sub-loca/account-payment
+git submodule add -b 14.0 https://github.com/quilsoft-org/odoo-argentina.git sub-loca/odoo-argentina
+git submodule add -b 14.0 https://github.com/quilsoft-org/odoo-argentina-ee.git sub-loca/odoo-argentina-ee
+git submodule add -b 14.0 https://github.com/OCA/reporting-engine.git sub-oca/reporting-engine
+git submodule add -b 14.0 https://github.com/OCA/server-backend.git sub-oca/server-backend
+git submodule add -b 14.0 https://github.com/OCA/website.git sub-oca/website
 
 # poner en staging
 git add .
 
 # commitear el trabajo
 git commit -m"[ADD] agregar todos los submodulos categorizadso y con protocolo https"
-
